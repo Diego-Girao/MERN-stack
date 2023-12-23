@@ -1,5 +1,6 @@
 import express from "express"
-import { PORT } from "./config.js"
+import { PORT, mongodbURL } from "./config.js"
+import mongoose from "mongoose"
 
 const app = express()
 
@@ -9,9 +10,18 @@ const app = express()
 // })
 
 app.get("/", (req, res) => {
-	res.send("Welcome to my first MERN Stack project!!")
+	console.log(req)
+	return res.status(245).send("My first MERN Stack project !!")
 })
 
-app.listen(PORT, () => {
-	console.log(`App is running on port ${PORT} 🚀️`)
-})
+mongoose
+	.connect(mongodbURL)
+	.then(() => {
+		console.log("App connected to database!")
+		app.listen(PORT, () => {
+			console.log(`App is running on port ${PORT} 🚀️`)
+		})
+	})
+	.catch((error) => {
+		console.log(error)
+	})
