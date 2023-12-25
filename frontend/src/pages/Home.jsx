@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Spinner from "../components/Spinner"
 import { Link } from "react-router-dom"
-import { AiOutlineEdit } from "react-icons/ai"
-import { BsInfoCircle } from "react-icons/bs"
-import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md"
+import { FcPlus, FcInfo } from "react-icons/fc"
+import { VscTrash } from "react-icons/vsc"
+import { TbEdit } from "react-icons/tb"
 
 const Home = () => {
 	const [books, setBooks] = useState([])
@@ -28,7 +28,7 @@ const Home = () => {
 			<div className="flex justify-between items-center">
 				<h1 className="text-3xl my-8">Books List</h1>
 				<Link to="/books/create">
-					<MdOutlineAddBox className="text-sky-800 text-4xl" />
+					<FcPlus className="size-8" />
 				</Link>
 			</div>
 			{loading ? (
@@ -66,13 +66,13 @@ const Home = () => {
 								<td className="border border-slate-700 rounded-md text-center">
 									<div className="flex justify-center gap-x-4">
 										<Link to={`/books/details/${book._id}`}>
-											<BsInfoCircle className="text-2xl text-emerald-600" />
+											<FcInfo className="text-2xl text-emerald-600" />
 										</Link>
 										<Link to={`/books/edit/${book._id}`}>
-											<AiOutlineEdit className="text-2xl text-yellow-500" />
+											<TbEdit className="text-2xl text-yellow-400" />
 										</Link>
 										<Link to={`/books/delete/${book._id}`}>
-											<MdOutlineDelete className="text-2xl text-red-500" />
+											<VscTrash className="text-2xl text-red-600" />
 										</Link>
 									</div>
 								</td>
