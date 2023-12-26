@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import Spinner from "../components/Spinner"
+import Skeleton from "../components/Skeleton"
 import { Link } from "react-router-dom"
 import { FcPlus, FcInfo } from "react-icons/fc"
 import { VscTrash } from "react-icons/vsc"
@@ -32,7 +32,7 @@ const Home = () => {
 				</Link>
 			</div>
 			{loading ? (
-				<Spinner />
+				<Skeleton />
 			) : (
 				<table className="w-full border-separate border-spacing-2">
 					<thead>
