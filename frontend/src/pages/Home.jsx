@@ -28,7 +28,7 @@ const Home = () => {
 	}, [])
 
 	return (
-		<div className="p-4">
+		<div className="p-4 max-w-[90rem] mx-auto">
 			<div className="flex justify-center items-center gap-x-4">
 				<button
 					className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg"
@@ -43,8 +43,8 @@ const Home = () => {
 					Card
 				</button>
 			</div>
-			<div className="flex justify-between items-center">
-				<h1 className="text-3xl my-8">Books List</h1>
+			<div className="flex mx-2 justify-between items-center">
+				<h1 className="text-3xl my-6">Books List</h1>
 				<Link to="/books/create">
 					<FcPlus className="size-8" />
 				</Link>
