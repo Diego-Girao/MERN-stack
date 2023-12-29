@@ -38,13 +38,13 @@ const BooksTable = ({ books }) => {
 						<td className="border border-slate-700 rounded-md text-center">
 							<div className="flex justify-center gap-x-4">
 								<Link to={`/books/details/${book._id}`}>
-									<FcInfo className="text-2xl text-emerald-600" />
+									<FcInfo className="text-2xl" title="Info" />
 								</Link>
 								<Link to={`/books/edit/${book._id}`}>
-									<TbEdit className="text-2xl text-yellow-400" />
+									<TbEdit className="text-2xl text-yellow-400" title="Edit" />
 								</Link>
 								<Link to={`/books/delete/${book._id}`}>
-									<VscTrash className="text-2xl text-red-600" />
+									<VscTrash className="text-2xl text-red-600" title="Delete" />
 								</Link>
 							</div>
 						</td>
