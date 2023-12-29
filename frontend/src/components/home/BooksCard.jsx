@@ -2,9 +2,10 @@
 import { Link } from "react-router-dom"
 import { PiBookOpenTextLight } from "react-icons/pi"
 import { BiUserCircle } from "react-icons/bi"
-import { AiOutlineEdit } from "react-icons/ai"
-import { BsInfoCircle } from "react-icons/bs"
-import { MdOutlineDelete } from "react-icons/md"
+
+import { FcInfo } from "react-icons/fc"
+import { TbEdit } from "react-icons/tb"
+import { VscTrash } from "react-icons/vsc"
 
 const BooksCard = ({ books }) => {
 	return (
@@ -12,7 +13,7 @@ const BooksCard = ({ books }) => {
 			{books.map((item) => (
 				<div
 					key={item._id}
-					className="border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl"
+					className="border-2 border-gray-500 rounded-lg px-4 py-2 m-2 relative hover:shadow-xl"
 				>
 					<h2 className="absolute top-1 right-2 px-3 py-1 bg-red-100 text-red-700 ring-1 ring-inset ring-red-600/40 rounded-lg">
 						{item.publishYear}
@@ -28,13 +29,19 @@ const BooksCard = ({ books }) => {
 					</div>
 					<div className="flex justify-between items-center gap-x-2 mt-4 p-4">
 						<Link to={`/books/details/${item._id}`}>
-							<BsInfoCircle className="text-2xl text-green-800 hover:text-black" />
+							<FcInfo className="text-2xl" title="Info" />
 						</Link>
 						<Link to={`/books/edit/${item._id}`}>
-							<AiOutlineEdit className="text-2xl text-yellow-500 hover:text-black" />
+							<TbEdit
+								className="text-2xl text-yellow-400 hover:text-black"
+								title="Edit"
+							/>
 						</Link>
 						<Link to={`/books/delete/${item._id}`}>
-							<MdOutlineDelete className="text-2xl text-red-500 hover:text-black" />
+							<VscTrash
+								className="text-2xl text-red-600 hover:text-black"
+								title="Delete"
+							/>
 						</Link>
 					</div>
 				</div>
