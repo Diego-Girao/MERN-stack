@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
 import { PiBookOpenTextLight } from "react-icons/pi"
-import { BiUserCircle } from "react-icons/bi"
-
+import { BiUserCircle, BiShow } from "react-icons/bi"
 import { FcInfo } from "react-icons/fc"
 import { TbEdit } from "react-icons/tb"
 import { VscTrash } from "react-icons/vsc"
+import { useState } from "react"
+import BookModal from "./BookModal"
 
 const BookSingleCard = ({ book }) => {
+	const [showModal, setShowModal] = useState(false)
 	return (
-		<div
-			key={book._id}
-			className="border-2 border-gray-500 rounded-lg px-4 py-2 m-2 relative hover:shadow-xl"
-		>
+		<div className="border-2 border-gray-500 rounded-lg px-4 py-2 m-2 relative hover:shadow-xl">
 			<h2 className="absolute top-1 right-2 px-3 py-1 bg-red-100 text-red-700 ring-1 ring-inset ring-red-600/40 rounded-lg">
 				{book.publishYear}
 			</h2>
@@ -26,6 +25,10 @@ const BookSingleCard = ({ book }) => {
 				<h2 className="my-1">{book.author}</h2>
 			</div>
 			<div className="flex justify-between books-center gap-x-2 mt-4 p-4">
+				<BiShow
+					className="text-3xl text-blue-800 hover:text-black cursor-pointer"
+					onClick={() => setShowModal(true)}
+				/>
 				<Link to={`/books/details/${book._id}`}>
 					<FcInfo className="text-2xl" title="Info" />
 				</Link>
@@ -42,6 +45,9 @@ const BookSingleCard = ({ book }) => {
 					/>
 				</Link>
 			</div>
+			{showModal && (
+				<BookModal book={book} onClose={() => setShowModal(false)} />
+			)}
 		</div>
 	)
 }
