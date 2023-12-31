@@ -13,18 +13,16 @@ const Home = () => {
 
 	useEffect(() => {
 		setLoading(true)
-		setTimeout(() => {
-			axios
-				.get("http://localhost:5555/books")
-				.then((response) => {
-					setBooks(response.data.data)
-					setLoading(false)
-				})
-				.catch((error) => {
-					console.log(error)
-					setLoading(false)
-				})
-		}, 3000)
+		axios
+			.get("http://localhost:5555/books")
+			.then((response) => {
+				setBooks(response.data.data)
+				setLoading(false)
+			})
+			.catch((error) => {
+				console.log(error)
+				setLoading(false)
+			})
 	}, [])
 
 	return (
