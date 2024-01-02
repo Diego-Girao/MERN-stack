@@ -28,6 +28,15 @@ To start the server and access the application, follow these steps:
 
 Feel free to explore the different features and functionalities of the MERN stack project.
 
+## Screenshots
+
+<div align='center'>
+
+<img src = 'frontend/src/assets/screenshots/screenshot_books_list.png' alt = 'Screenshot books table style' width = 600 />
+
+<img src = 'frontend/src/assets/screenshots/screenshot_books_card.png' alt = 'Screenshot books card style' width = 600 />
+</div>
+
 ## Technologies Used
 
 The following technologies were used in the development of this project:
