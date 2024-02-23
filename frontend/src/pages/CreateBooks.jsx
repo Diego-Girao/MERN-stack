@@ -39,7 +39,7 @@ const CreateBooks = () => {
 			<BackButton />
 			<h1 className="text-3xl my-4">Create Book</h1>
 			{loading ? <Skeleton /> : ""}
-			<div className="flex flex-col border-2 border-sky-400 rounded-xl w-[37.5rem] p-4 mx-auto">
+			<div className="flex flex-col border-2 border-sky-400 rounded-xl w-fit sm:w-[37.5rem] p-4 mx-auto">
 				<div className="my-4">
 					<label className="text-xl mr-4 text-gray-500">Title</label>
 					<input
@@ -71,7 +71,7 @@ const CreateBooks = () => {
 					/>
 				</div>
 				<button
-					className="rounded-xl p-2 text-lg font-semibold text-white bg-sky-500 m-8 hover:bg-sky-800"
+					className="rounded-xl p-2 my-4 text-lg font-semibold text-white bg-sky-500 w-full hover:bg-sky-800"
 					onClick={handleSaveBook}
 				>
 					Save
