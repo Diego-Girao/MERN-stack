@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 import { PiBookOpenTextLight } from "react-icons/pi"
 import { BiUserCircle, BiShow } from "react-icons/bi"
-import { FcInfo } from "react-icons/fc"
+import { VscInfo } from "react-icons/vsc"
 import { TbEdit } from "react-icons/tb"
 import { VscTrash } from "react-icons/vsc"
 import { useState } from "react"
@@ -15,22 +15,26 @@ const BookSingleCard = ({ book }) => {
 			<h2 className="absolute top-1 right-2 px-3 py-1 bg-red-100 text-red-700 ring-1 ring-inset ring-red-600/40 rounded-lg">
 				{book.publishYear}
 			</h2>
-			<h4 className="my-2 text-gray-500">{book._id}</h4>
-			<div className="flex justify-start books-center gap-x-2">
-				<PiBookOpenTextLight className="text-red-300 text-2xl" />
-				<h2 className="my-1">{book.title}</h2>
+			<h4 className="mt-8 text-gray-400 truncate">Book id: {book._id}</h4>
+			<div className="flex justify-start items-center gap-x-2">
+				<PiBookOpenTextLight className="text-red-400 text-2xl" />
+				<h2 className="my-1 truncate">Title: {book.title}</h2>
 			</div>
-			<div className="flex justify-start books-center gap-x-2">
+			<div className="flex justify-start items-center gap-x-2">
 				<BiUserCircle className="text-red-300 text-2xl" />
-				<h2 className="my-1">{book.author}</h2>
+				<h2 className="my-1">Author: {book.author}</h2>
 			</div>
-			<div className="flex justify-between books-center gap-x-2 mt-4 p-4">
+			<div className="flex justify-between items-center gap-x-2 mt-4 p-4">
 				<BiShow
-					className="text-3xl text-blue-800 hover:text-black cursor-pointer"
+					className="text-3xl text-purple-700 hover:text-black cursor-pointer"
+					title=" Modal"
 					onClick={() => setShowModal(true)}
 				/>
 				<Link to={`/books/details/${book._id}`}>
-					<FcInfo className="text-2xl" title="Info" />
+					<VscInfo
+						className="text-2xl text-blue-600 hover:text-black"
+						title="Info"
+					/>
 				</Link>
 				<Link to={`/books/edit/${book._id}`}>
 					<TbEdit

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
-import { FcInfo } from "react-icons/fc"
+import { VscInfo } from "react-icons/vsc"
 import { VscTrash } from "react-icons/vsc"
 import { TbEdit } from "react-icons/tb"
 
@@ -44,13 +44,22 @@ const BooksTable = ({ books }) => {
 						<td className="border border-slate-700 rounded-md text-center">
 							<div className="flex justify-center gap-x-4">
 								<Link to={`/books/details/${book._id}`}>
-									<FcInfo className="text-2xl" title="Info" />
+									<VscInfo
+										className="text-2xl text-blue-600 hover:text-black"
+										title="Info"
+									/>
 								</Link>
 								<Link to={`/books/edit/${book._id}`}>
-									<TbEdit className="text-2xl text-yellow-400" title="Edit" />
+									<TbEdit
+										className="text-2xl text-yellow-400 hover:text-black"
+										title="Edit"
+									/>
 								</Link>
 								<Link to={`/books/delete/${book._id}`}>
-									<VscTrash className="text-2xl text-red-600" title="Delete" />
+									<VscTrash
+										className="text-2xl text-red-600 hover:text-black"
+										title="Delete"
+									/>
 								</Link>
 							</div>
 						</td>
