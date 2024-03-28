@@ -33,7 +33,7 @@ const Home = () => {
 				<button
 					className={`px-4 py-1 rounded-lg flex items-center gap-2 ${
 						showType === "table"
-							? "bg-sky-500 shadow-md shadow-black pointer-events-none"
+							? "bg-none border-sky-500 border  shadow-md shadow-black pointer-events-none"
 							: "bg-sky-500"
 					} hover:bg-black hover:text-white hover:duration-300 hover:ease-linear`}
 					onClick={() => setShowType("table")}
@@ -44,7 +44,7 @@ const Home = () => {
 				<button
 					className={`px-4 py-1 rounded-lg flex items-center gap-2 ${
 						showType === "card"
-							? "bg-sky-500 shadow-md shadow-black pointer-events-none"
+							? "bg-none border-sky-500 border  shadow-md shadow-black pointer-events-none"
 							: "bg-sky-500"
 					} hover:bg-black hover:text-white hover:duration-300 hover:ease-linear`}
 					onClick={() => setShowType("card")}
